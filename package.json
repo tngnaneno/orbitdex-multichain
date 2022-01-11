@@ -1,0 +1,14 @@
+{
+  "name": "orbitdex",
+  "private": true,
+  "version": "1.4.0",
+  "type": "module",
+  "scripts": {
+    "server": "node server.mjs",
+    "start": "node server.mjs",
+    "dev": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

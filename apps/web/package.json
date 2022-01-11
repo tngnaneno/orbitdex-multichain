@@ -1,0 +1,33 @@
+{
+  "name": "@orbitdex/web",
+  "version": "1.4.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^15.1.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "wagmi": "^2.14.6",
+    "viem": "^2.21.54",
+    "@tanstack/react-query": "^5.62.11",
+    "@rainbow-me/rainbowkit": "^2.2.1",
+    "zustand": "^5.0.2",
+    "zod": "^3.24.1",
+    "framer-motion": "^11.15.0",
+    "recharts": "^2.15.0",
+    "lucide-react": "^0.469.0",
+    "sonner": "^1.7.1",
+    "nuqs": "^2.2.3",
+    "decimal.js": "^10.4.3",
+    "neverthrow": "^8.1.1",
+    "ofetch": "^1.4.1",
+    "@orbitdex/sdk": "workspace:*",
+    "@orbitdex/config": "workspace:*"
+  }
+}

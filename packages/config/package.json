@@ -1,0 +1,7 @@
+{
+  "name": "@orbitdex/config",
+  "version": "1.4.0",
+  "type": "module",
+  "main": "index.ts",
+  "dependencies": { "viem": "^2.21.54", "zod": "^3.24.1" }
+}

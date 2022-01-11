@@ -1,0 +1,1052 @@
+﻿# Development log
+
+- 2022-01-11T22:47:56Z | Tim Neutkens | fix: harden settlement edge-case handling
+- 2022-01-13T12:43:52Z | awkweb | refactor: simplify oracle module boundaries
+- 2022-01-15T02:39:48Z | jxom | perf: reduce liquidity gas / latency
+- 2022-01-16T16:35:44Z | Dan Abramov | test: expand coverage for fees
+- 2022-01-18T06:31:40Z | Hayden Adams | docs: clarify rewards integrator notes
+- 2022-01-19T20:27:36Z | transmissions11 | chore: bump vault toolchain pins
+- 2022-01-21T10:23:33Z | Vectorized | security: tighten staking validation
+- 2022-01-23T00:19:29Z | mds1 | feat: add telemetry hooks for restaking
+- 2022-01-24T14:15:25Z | gakonst | fix: correct AMM rounding / precision
+- 2022-01-26T04:11:21Z | Richard Moore | feat: improve quoter pricing path
+- 2022-01-27T18:07:17Z | Kamil Mysliwiec | fix: harden router edge-case handling
+- 2022-01-29T08:03:13Z | Tim Suchanek | refactor: simplify indexer module boundaries
+- 2022-01-30T21:59:09Z | Armani Ferrante | perf: reduce API gas / latency
+- 2022-02-01T11:55:06Z | acheroncrypto | test: expand coverage for SDK
+- 2022-02-03T01:51:02Z | vitalik.eth | docs: clarify auth integrator notes
+- 2022-02-04T15:46:58Z | pcaversaccio | chore: bump Permit2 toolchain pins
+- 2022-02-06T05:25:54Z | banteg | security: tighten TWAP validation
+- 2022-02-07T19:21:50Z | fubuloubu | feat: add telemetry hooks for flash
+- 2022-02-09T09:17:46Z | Recmo | fix: correct allocator rounding / precision
+- 2022-02-10T23:13:42Z | Guillermo Rauch | feat: improve strategy pricing path
+- 2022-02-12T13:09:39Z | Tim Neutkens | fix: harden operator edge-case handling
+- 2022-02-14T03:05:35Z | awkweb | refactor: simplify gauge module boundaries
+- 2022-02-15T17:01:31Z | jxom | perf: reduce bridge gas / latency
+- 2022-02-17T06:57:27Z | Dan Abramov | test: expand coverage for nonce
+- 2022-02-18T20:53:23Z | Hayden Adams | docs: clarify routing integrator notes
+- 2022-02-20T10:49:19Z | transmissions11 | chore: bump settlement toolchain pins
+- 2022-02-22T00:45:15Z | Vectorized | security: tighten oracle validation
+- 2022-02-23T14:41:12Z | mds1 | feat: add telemetry hooks for liquidity
+- 2022-02-25T04:37:08Z | gakonst | fix: correct fees rounding / precision
+- 2022-02-26T18:33:04Z | Richard Moore | feat: improve rewards pricing path
+- 2022-02-28T08:29:00Z | Kamil Mysliwiec | fix: harden vault edge-case handling
+- 2022-03-01T22:24:56Z | Tim Suchanek | refactor: simplify staking module boundaries
+- 2022-03-03T12:20:52Z | Armani Ferrante | perf: reduce restaking gas / latency
+- 2022-03-05T01:59:49Z | acheroncrypto | test: expand coverage for AMM
+- 2022-03-06T15:55:45Z | vitalik.eth | docs: clarify quoter integrator notes
+- 2022-03-08T05:51:41Z | pcaversaccio | chore: bump router toolchain pins
+- 2022-03-09T19:47:37Z | banteg | security: tighten indexer validation
+- 2022-03-11T09:43:33Z | fubuloubu | feat: add telemetry hooks for API
+- 2022-03-12T23:39:29Z | Recmo | fix: correct SDK rounding / precision
+- 2022-03-14T13:35:25Z | Guillermo Rauch | feat: improve auth pricing path
+- 2022-03-16T03:31:22Z | Tim Neutkens | fix: harden Permit2 edge-case handling
+- 2022-03-17T17:27:18Z | awkweb | refactor: simplify TWAP module boundaries
+- 2022-03-19T07:23:14Z | jxom | perf: reduce flash gas / latency
+- 2022-03-20T21:19:10Z | Dan Abramov | test: expand coverage for allocator
+- 2022-03-22T11:15:06Z | Hayden Adams | docs: clarify strategy integrator notes
+- 2022-03-24T01:11:02Z | transmissions11 | chore: bump operator toolchain pins
+- 2022-03-25T15:06:58Z | Vectorized | security: tighten gauge validation
+- 2022-03-27T05:02:55Z | mds1 | feat: add telemetry hooks for bridge
+- 2022-03-28T18:58:51Z | gakonst | fix: correct nonce rounding / precision
+- 2022-03-30T08:54:47Z | Richard Moore | feat: improve routing pricing path
+- 2022-03-31T22:33:43Z | Kamil Mysliwiec | fix: harden settlement edge-case handling
+- 2022-04-02T12:29:39Z | Tim Suchanek | refactor: simplify oracle module boundaries
+- 2022-04-04T02:25:35Z | Armani Ferrante | perf: reduce liquidity gas / latency
+- 2022-04-05T16:21:31Z | acheroncrypto | test: expand coverage for fees
+- 2022-04-07T06:17:28Z | vitalik.eth | docs: clarify rewards integrator notes
+- 2022-04-08T20:13:24Z | pcaversaccio | chore: bump vault toolchain pins
+- 2022-04-10T10:09:20Z | banteg | security: tighten staking validation
+- 2022-04-12T00:05:16Z | fubuloubu | feat: add telemetry hooks for restaking
+- 2022-04-13T14:01:12Z | Recmo | fix: correct AMM rounding / precision
+- 2022-04-15T03:56:08Z | Guillermo Rauch | feat: improve quoter pricing path
+- 2022-04-16T17:52:04Z | Tim Neutkens | fix: harden router edge-case handling
+- 2022-04-18T07:48:01Z | awkweb | refactor: simplify indexer module boundaries
+- 2022-04-19T21:43:57Z | jxom | perf: reduce API gas / latency
+- 2022-04-21T11:39:53Z | Dan Abramov | test: expand coverage for SDK
+- 2022-04-23T01:35:49Z | Hayden Adams | docs: clarify auth integrator notes
+- 2022-04-24T15:31:45Z | transmissions11 | chore: bump Permit2 toolchain pins
+- 2022-04-26T05:27:41Z | Vectorized | security: tighten TWAP validation
+- 2022-04-27T19:06:38Z | mds1 | feat: add telemetry hooks for flash
+- 2022-04-29T09:02:34Z | gakonst | fix: correct allocator rounding / precision
+- 2022-04-30T22:58:30Z | Richard Moore | feat: improve strategy pricing path
+- 2022-05-02T12:54:26Z | Kamil Mysliwiec | fix: harden operator edge-case handling
+- 2022-05-04T02:50:22Z | Tim Suchanek | refactor: simplify gauge module boundaries
+- 2022-05-05T16:46:18Z | Armani Ferrante | perf: reduce bridge gas / latency
+- 2022-05-07T06:42:14Z | acheroncrypto | test: expand coverage for nonce
+- 2022-05-08T20:38:11Z | vitalik.eth | docs: clarify routing integrator notes
+- 2022-05-10T10:34:07Z | pcaversaccio | chore: bump settlement toolchain pins
+- 2022-05-12T00:30:03Z | banteg | security: tighten oracle validation
+- 2022-05-13T14:25:59Z | fubuloubu | feat: add telemetry hooks for liquidity
+- 2022-05-15T04:21:55Z | Recmo | fix: correct fees rounding / precision
+- 2022-05-16T18:17:51Z | Guillermo Rauch | feat: improve rewards pricing path
+- 2022-05-18T08:13:47Z | Tim Neutkens | fix: harden vault edge-case handling
+- 2022-05-19T22:09:44Z | awkweb | refactor: simplify staking module boundaries
+- 2022-05-21T12:05:40Z | jxom | perf: reduce restaking gas / latency
+- 2022-05-23T02:01:36Z | Dan Abramov | test: expand coverage for AMM
+- 2022-05-24T15:40:32Z | Hayden Adams | docs: clarify quoter integrator notes
+- 2022-05-26T05:36:28Z | transmissions11 | chore: bump router toolchain pins
+- 2022-05-27T19:32:24Z | Vectorized | security: tighten indexer validation
+- 2022-05-29T09:28:20Z | mds1 | feat: add telemetry hooks for API
+- 2022-05-30T23:24:17Z | gakonst | fix: correct SDK rounding / precision
+- 2022-06-01T13:20:13Z | Richard Moore | feat: improve auth pricing path
+- 2022-06-03T03:16:09Z | Kamil Mysliwiec | fix: harden Permit2 edge-case handling
+- 2022-06-04T17:12:05Z | Tim Suchanek | refactor: simplify TWAP module boundaries
+- 2022-06-06T07:08:01Z | Armani Ferrante | perf: reduce flash gas / latency
+- 2022-06-07T21:03:57Z | acheroncrypto | test: expand coverage for allocator
+- 2022-06-09T10:59:54Z | vitalik.eth | docs: clarify strategy integrator notes
+- 2022-06-11T00:55:50Z | pcaversaccio | chore: bump operator toolchain pins
+- 2022-06-12T14:51:46Z | banteg | security: tighten gauge validation
+- 2022-06-14T04:47:42Z | fubuloubu | feat: add telemetry hooks for bridge
+- 2022-06-15T18:43:38Z | Recmo | fix: correct nonce rounding / precision
+- 2022-06-17T08:39:34Z | Guillermo Rauch | feat: improve routing pricing path
+- 2022-06-18T22:35:30Z | Tim Neutkens | fix: harden settlement edge-case handling
+- 2022-06-20T12:14:27Z | awkweb | refactor: simplify oracle module boundaries
+- 2022-06-22T02:10:23Z | jxom | perf: reduce liquidity gas / latency
+- 2022-06-23T16:06:19Z | Dan Abramov | test: expand coverage for fees
+- 2022-06-25T06:02:15Z | Hayden Adams | docs: clarify rewards integrator notes
+- 2022-06-26T19:58:11Z | transmissions11 | chore: bump vault toolchain pins
+- 2022-06-28T09:54:07Z | Vectorized | security: tighten staking validation
+- 2022-06-29T23:50:03Z | mds1 | feat: add telemetry hooks for restaking
+- 2022-07-01T13:46:00Z | gakonst | fix: correct AMM rounding / precision
+- 2022-07-03T03:41:56Z | Richard Moore | feat: improve quoter pricing path
+- 2022-07-04T17:37:52Z | Kamil Mysliwiec | fix: harden router edge-case handling
+- 2022-07-06T07:33:48Z | Tim Suchanek | refactor: simplify indexer module boundaries
+- 2022-07-07T21:29:44Z | Armani Ferrante | perf: reduce API gas / latency
+- 2022-07-09T11:25:40Z | acheroncrypto | test: expand coverage for SDK
+- 2022-07-11T01:21:36Z | vitalik.eth | docs: clarify auth integrator notes
+- 2022-07-12T15:17:33Z | pcaversaccio | chore: bump Permit2 toolchain pins
+- 2022-07-14T05:13:29Z | banteg | security: tighten TWAP validation
+- 2022-07-15T19:09:25Z | fubuloubu | feat: add telemetry hooks for flash
+- 2022-07-17T08:48:21Z | Recmo | fix: correct allocator rounding / precision
+- 2022-07-18T22:43:17Z | Guillermo Rauch | feat: improve strategy pricing path
+- 2022-07-20T12:39:13Z | Tim Neutkens | fix: harden operator edge-case handling
+- 2022-07-22T02:35:09Z | awkweb | refactor: simplify gauge module boundaries
+- 2022-07-23T16:31:06Z | jxom | perf: reduce bridge gas / latency
+- 2022-07-25T06:27:02Z | Dan Abramov | test: expand coverage for nonce
+- 2022-07-26T20:22:58Z | Hayden Adams | docs: clarify routing integrator notes
+- 2022-07-28T10:18:54Z | transmissions11 | chore: bump settlement toolchain pins
+- 2022-07-30T00:14:50Z | Vectorized | security: tighten oracle validation
+- 2022-07-31T14:10:46Z | mds1 | feat: add telemetry hooks for liquidity
+- 2022-08-02T04:06:43Z | gakonst | fix: correct fees rounding / precision
+- 2022-08-03T18:02:39Z | Richard Moore | feat: improve rewards pricing path
+- 2022-08-05T07:58:35Z | Kamil Mysliwiec | fix: harden vault edge-case handling
+- 2022-08-06T21:54:31Z | Tim Suchanek | refactor: simplify staking module boundaries
+- 2022-08-08T11:50:27Z | Armani Ferrante | perf: reduce restaking gas / latency
+- 2022-08-10T01:46:23Z | acheroncrypto | test: expand coverage for AMM
+- 2022-08-11T15:42:19Z | vitalik.eth | docs: clarify quoter integrator notes
+- 2022-08-13T05:21:16Z | pcaversaccio | chore: bump router toolchain pins
+- 2022-08-14T19:17:12Z | banteg | security: tighten indexer validation
+- 2022-08-16T09:13:08Z | fubuloubu | feat: add telemetry hooks for API
+- 2022-08-17T23:09:04Z | Recmo | fix: correct SDK rounding / precision
+- 2022-08-19T13:05:00Z | Guillermo Rauch | feat: improve auth pricing path
+- 2022-08-21T03:00:56Z | Tim Neutkens | fix: harden Permit2 edge-case handling
+- 2022-08-22T16:56:52Z | awkweb | refactor: simplify TWAP module boundaries
+- 2022-08-24T06:52:49Z | jxom | perf: reduce flash gas / latency
+- 2022-08-25T20:48:45Z | Dan Abramov | test: expand coverage for allocator
+- 2022-08-27T10:44:41Z | Hayden Adams | docs: clarify strategy integrator notes
+- 2022-08-29T00:40:37Z | transmissions11 | chore: bump operator toolchain pins
+- 2022-08-30T14:36:33Z | Vectorized | security: tighten gauge validation
+- 2022-09-01T04:32:29Z | mds1 | feat: add telemetry hooks for bridge
+- 2022-09-02T18:28:25Z | gakonst | fix: correct nonce rounding / precision
+- 2022-09-04T08:24:22Z | Richard Moore | feat: improve routing pricing path
+- 2022-09-05T22:20:18Z | Kamil Mysliwiec | fix: harden settlement edge-case handling
+- 2022-09-07T12:16:14Z | Tim Suchanek | refactor: simplify oracle module boundaries
+- 2022-09-09T01:55:10Z | Armani Ferrante | perf: reduce liquidity gas / latency
+- 2022-09-10T15:51:06Z | acheroncrypto | test: expand coverage for fees
+- 2022-09-12T05:47:02Z | vitalik.eth | docs: clarify rewards integrator notes
+- 2022-09-13T19:42:59Z | pcaversaccio | chore: bump vault toolchain pins
+- 2022-09-15T09:38:55Z | banteg | security: tighten staking validation
+- 2022-09-16T23:34:51Z | fubuloubu | feat: add telemetry hooks for restaking
+- 2022-09-18T13:30:47Z | Recmo | fix: correct AMM rounding / precision
+- 2022-09-20T03:26:43Z | Guillermo Rauch | feat: improve quoter pricing path
+- 2022-09-21T17:22:39Z | Tim Neutkens | fix: harden router edge-case handling
+- 2022-09-23T07:18:35Z | awkweb | refactor: simplify indexer module boundaries
+- 2022-09-24T21:14:32Z | jxom | perf: reduce API gas / latency
+- 2022-09-26T11:10:28Z | Dan Abramov | test: expand coverage for SDK
+- 2022-09-28T01:06:24Z | Hayden Adams | docs: clarify auth integrator notes
+- 2022-09-29T15:02:20Z | transmissions11 | chore: bump Permit2 toolchain pins
+- 2022-10-01T04:58:16Z | Vectorized | security: tighten TWAP validation
+- 2022-10-02T18:54:12Z | mds1 | feat: add telemetry hooks for flash
+- 2022-10-04T08:50:08Z | gakonst | fix: correct allocator rounding / precision
+- 2022-10-05T22:29:05Z | Richard Moore | feat: improve strategy pricing path
+- 2022-10-07T12:25:01Z | Kamil Mysliwiec | fix: harden operator edge-case handling
+- 2022-10-09T02:20:57Z | Tim Suchanek | refactor: simplify gauge module boundaries
+- 2022-10-10T16:16:53Z | Armani Ferrante | perf: reduce bridge gas / latency
+- 2022-10-12T06:12:49Z | acheroncrypto | test: expand coverage for nonce
+- 2022-10-13T20:08:45Z | vitalik.eth | docs: clarify routing integrator notes
+- 2022-10-15T10:04:41Z | pcaversaccio | chore: bump settlement toolchain pins
+- 2022-10-17T00:00:38Z | banteg | security: tighten oracle validation
+- 2022-10-18T13:56:34Z | fubuloubu | feat: add telemetry hooks for liquidity
+- 2022-10-20T03:52:30Z | Recmo | fix: correct fees rounding / precision
+- 2022-10-21T17:47:26Z | Guillermo Rauch | feat: improve rewards pricing path
+- 2022-10-23T07:43:22Z | Tim Neutkens | fix: harden vault edge-case handling
+- 2022-10-24T21:39:18Z | awkweb | refactor: simplify staking module boundaries
+- 2022-10-26T11:35:14Z | jxom | perf: reduce restaking gas / latency
+- 2022-10-28T01:31:11Z | Dan Abramov | test: expand coverage for AMM
+- 2022-10-29T15:27:07Z | Hayden Adams | docs: clarify quoter integrator notes
+- 2022-10-31T05:23:03Z | transmissions11 | chore: bump router toolchain pins
+- 2022-11-01T19:01:59Z | Vectorized | security: tighten indexer validation
+- 2022-11-03T08:57:55Z | mds1 | feat: add telemetry hooks for API
+- 2022-11-04T22:53:51Z | gakonst | fix: correct SDK rounding / precision
+- 2022-11-06T12:49:48Z | Richard Moore | feat: improve auth pricing path
+- 2022-11-08T02:45:44Z | Kamil Mysliwiec | fix: harden Permit2 edge-case handling
+- 2022-11-09T16:41:40Z | Tim Suchanek | refactor: simplify TWAP module boundaries
+- 2022-11-11T06:37:36Z | Armani Ferrante | perf: reduce flash gas / latency
+- 2022-11-12T20:33:32Z | acheroncrypto | test: expand coverage for allocator
+- 2022-11-14T10:29:28Z | vitalik.eth | docs: clarify strategy integrator notes
+- 2022-11-16T00:25:24Z | pcaversaccio | chore: bump operator toolchain pins
+- 2022-11-17T14:21:21Z | banteg | security: tighten gauge validation
+- 2022-11-19T04:17:17Z | fubuloubu | feat: add telemetry hooks for bridge
+- 2022-11-20T18:13:13Z | Recmo | fix: correct nonce rounding / precision
+- 2022-11-22T08:09:09Z | Guillermo Rauch | feat: improve routing pricing path
+- 2022-11-23T22:05:05Z | Tim Neutkens | fix: harden settlement edge-case handling
+- 2022-11-25T12:01:01Z | awkweb | refactor: simplify oracle module boundaries
+- 2022-11-27T01:56:57Z | jxom | perf: reduce liquidity gas / latency
+- 2022-11-28T15:35:54Z | Dan Abramov | test: expand coverage for fees
+- 2022-11-30T05:31:50Z | Hayden Adams | docs: clarify rewards integrator notes
+- 2022-12-01T19:27:46Z | transmissions11 | chore: bump vault toolchain pins
+- 2022-12-03T09:23:42Z | Vectorized | security: tighten staking validation
+- 2022-12-04T23:19:38Z | mds1 | feat: add telemetry hooks for restaking
+- 2022-12-06T13:15:34Z | gakonst | fix: correct AMM rounding / precision
+- 2022-12-08T03:11:30Z | Richard Moore | feat: improve quoter pricing path
+- 2022-12-09T17:07:27Z | Kamil Mysliwiec | fix: harden router edge-case handling
+- 2022-12-11T07:03:23Z | Tim Suchanek | refactor: simplify indexer module boundaries
+- 2022-12-12T20:59:19Z | Armani Ferrante | perf: reduce API gas / latency
+- 2022-12-14T10:55:15Z | acheroncrypto | test: expand coverage for SDK
+- 2022-12-16T00:51:11Z | vitalik.eth | docs: clarify auth integrator notes
+- 2022-12-17T14:47:07Z | pcaversaccio | chore: bump Permit2 toolchain pins
+- 2022-12-19T04:43:04Z | banteg | security: tighten TWAP validation
+- 2022-12-20T18:39:00Z | fubuloubu | feat: add telemetry hooks for flash
+- 2022-12-22T08:34:56Z | Recmo | fix: correct allocator rounding / precision
+- 2022-12-23T22:30:52Z | Guillermo Rauch | feat: improve strategy pricing path
+- 2022-12-25T12:09:48Z | Tim Neutkens | fix: harden operator edge-case handling
+- 2022-12-27T02:05:44Z | awkweb | refactor: simplify gauge module boundaries
+- 2022-12-28T16:01:40Z | jxom | perf: reduce bridge gas / latency
+- 2022-12-30T05:57:37Z | Dan Abramov | test: expand coverage for nonce
+- 2022-12-31T19:53:33Z | Hayden Adams | docs: clarify routing integrator notes
+- 2023-01-02T09:49:29Z | transmissions11 | chore: bump settlement toolchain pins
+- 2023-01-03T23:45:25Z | Vectorized | security: tighten oracle validation
+- 2023-01-05T13:41:21Z | mds1 | feat: add telemetry hooks for liquidity
+- 2023-01-07T03:37:17Z | gakonst | fix: correct fees rounding / precision
+- 2023-01-08T17:33:13Z | Richard Moore | feat: improve rewards pricing path
+- 2023-01-10T07:29:10Z | Kamil Mysliwiec | fix: harden vault edge-case handling
+- 2023-01-11T21:25:06Z | Tim Suchanek | refactor: simplify staking module boundaries
+- 2023-01-13T11:21:02Z | Armani Ferrante | perf: reduce restaking gas / latency
+- 2023-01-15T01:16:58Z | acheroncrypto | test: expand coverage for AMM
+- 2023-01-16T15:12:54Z | vitalik.eth | docs: clarify quoter integrator notes
+- 2023-01-18T05:08:50Z | pcaversaccio | chore: bump router toolchain pins
+- 2023-01-19T19:04:46Z | banteg | security: tighten indexer validation
+- 2023-01-21T08:43:43Z | fubuloubu | feat: add telemetry hooks for API
+- 2023-01-22T22:39:39Z | Recmo | fix: correct SDK rounding / precision
+- 2023-01-24T12:34:35Z | Guillermo Rauch | feat: improve auth pricing path
+- 2023-01-26T02:30:31Z | Tim Neutkens | fix: harden Permit2 edge-case handling
+- 2023-01-27T16:26:27Z | awkweb | refactor: simplify TWAP module boundaries
+- 2023-01-29T06:22:23Z | jxom | perf: reduce flash gas / latency
+- 2023-01-30T20:18:19Z | Dan Abramov | test: expand coverage for allocator
+- 2023-02-01T10:14:16Z | Hayden Adams | docs: clarify strategy integrator notes
+- 2023-02-03T00:10:12Z | transmissions11 | chore: bump operator toolchain pins
+- 2023-02-04T14:06:08Z | Vectorized | security: tighten gauge validation
+- 2023-02-06T04:02:04Z | mds1 | feat: add telemetry hooks for bridge
+- 2023-02-07T17:58:00Z | gakonst | fix: correct nonce rounding / precision
+- 2023-02-09T07:53:56Z | Richard Moore | feat: improve routing pricing path
+- 2023-02-10T21:49:53Z | Kamil Mysliwiec | fix: harden settlement edge-case handling
+- 2023-02-12T11:45:49Z | Tim Suchanek | refactor: simplify oracle module boundaries
+- 2023-02-14T01:41:45Z | Armani Ferrante | perf: reduce liquidity gas / latency
+- 2023-02-15T15:37:41Z | acheroncrypto | test: expand coverage for fees
+- 2023-02-17T05:16:37Z | vitalik.eth | docs: clarify rewards integrator notes
+- 2023-02-18T19:12:33Z | pcaversaccio | chore: bump vault toolchain pins
+- 2023-02-20T09:08:29Z | banteg | security: tighten staking validation
+- 2023-02-21T23:04:26Z | fubuloubu | feat: add telemetry hooks for restaking
+- 2023-02-23T13:00:22Z | Recmo | fix: correct AMM rounding / precision
+- 2023-02-25T02:56:18Z | Guillermo Rauch | feat: improve quoter pricing path
+- 2023-02-26T16:52:14Z | Tim Neutkens | fix: harden router edge-case handling
+- 2023-02-28T06:48:10Z | awkweb | refactor: simplify indexer module boundaries
+- 2023-03-01T20:44:06Z | jxom | perf: reduce API gas / latency
+- 2023-03-03T10:40:02Z | Dan Abramov | test: expand coverage for SDK
+- 2023-03-05T00:35:59Z | Hayden Adams | docs: clarify auth integrator notes
+- 2023-03-06T14:31:55Z | transmissions11 | chore: bump Permit2 toolchain pins
+- 2023-03-08T04:27:51Z | Vectorized | security: tighten TWAP validation
+- 2023-03-09T18:23:47Z | mds1 | feat: add telemetry hooks for flash
+- 2023-03-11T08:19:43Z | gakonst | fix: correct allocator rounding / precision
+- 2023-03-12T22:15:39Z | Richard Moore | feat: improve strategy pricing path
+- 2023-03-14T12:11:35Z | Kamil Mysliwiec | fix: harden operator edge-case handling
+- 2023-03-16T01:50:32Z | Tim Suchanek | refactor: simplify gauge module boundaries
+- 2023-03-17T15:46:28Z | Armani Ferrante | perf: reduce bridge gas / latency
+- 2023-03-19T05:42:24Z | acheroncrypto | test: expand coverage for nonce
+- 2023-03-20T19:38:20Z | vitalik.eth | docs: clarify routing integrator notes
+- 2023-03-22T09:34:16Z | pcaversaccio | chore: bump settlement toolchain pins
+- 2023-03-23T23:30:12Z | banteg | security: tighten oracle validation
+- 2023-03-25T13:26:08Z | fubuloubu | feat: add telemetry hooks for liquidity
+- 2023-03-27T03:22:05Z | Recmo | fix: correct fees rounding / precision
+- 2023-03-28T17:18:01Z | Guillermo Rauch | feat: improve rewards pricing path
+- 2023-03-30T07:13:57Z | Tim Neutkens | fix: harden vault edge-case handling
+- 2023-03-31T21:09:53Z | awkweb | refactor: simplify staking module boundaries
+- 2023-04-02T11:05:49Z | jxom | perf: reduce restaking gas / latency
+- 2023-04-04T01:01:45Z | Dan Abramov | test: expand coverage for AMM
+- 2023-04-05T14:57:42Z | Hayden Adams | docs: clarify quoter integrator notes
+- 2023-04-07T04:53:38Z | transmissions11 | chore: bump router toolchain pins
+- 2023-04-08T18:49:34Z | Vectorized | security: tighten indexer validation
+- 2023-04-10T08:45:30Z | mds1 | feat: add telemetry hooks for API
+- 2023-04-11T22:24:26Z | gakonst | fix: correct SDK rounding / precision
+- 2023-04-13T12:20:22Z | Richard Moore | feat: improve auth pricing path
+- 2023-04-15T02:16:18Z | Kamil Mysliwiec | fix: harden Permit2 edge-case handling
+- 2023-04-16T16:12:15Z | Tim Suchanek | refactor: simplify TWAP module boundaries
+- 2023-04-18T06:08:11Z | Armani Ferrante | perf: reduce flash gas / latency
+- 2023-04-19T20:04:07Z | acheroncrypto | test: expand coverage for allocator
+- 2023-04-21T10:00:03Z | vitalik.eth | docs: clarify strategy integrator notes
+- 2023-04-22T23:55:59Z | pcaversaccio | chore: bump operator toolchain pins
+- 2023-04-24T13:51:55Z | banteg | security: tighten gauge validation
+- 2023-04-26T03:47:51Z | fubuloubu | feat: add telemetry hooks for bridge
+- 2023-04-27T17:43:48Z | Recmo | fix: correct nonce rounding / precision
+- 2023-04-29T07:38:44Z | Guillermo Rauch | feat: improve routing pricing path
+- 2023-04-30T21:34:40Z | Tim Neutkens | fix: harden settlement edge-case handling
+- 2023-05-02T11:30:36Z | awkweb | refactor: simplify oracle module boundaries
+- 2023-05-04T01:26:32Z | jxom | perf: reduce liquidity gas / latency
+- 2023-05-05T15:22:28Z | Dan Abramov | test: expand coverage for fees
+- 2023-05-07T05:18:24Z | Hayden Adams | docs: clarify rewards integrator notes
+- 2023-05-08T18:57:21Z | transmissions11 | chore: bump vault toolchain pins
+- 2023-05-10T08:53:17Z | Vectorized | security: tighten staking validation
+- 2023-05-11T22:49:13Z | mds1 | feat: add telemetry hooks for restaking
+- 2023-05-13T12:45:09Z | gakonst | fix: correct AMM rounding / precision
+- 2023-05-15T02:41:05Z | Richard Moore | feat: improve quoter pricing path
+- 2023-05-16T16:37:01Z | Kamil Mysliwiec | fix: harden router edge-case handling
+- 2023-05-18T06:32:58Z | Tim Suchanek | refactor: simplify indexer module boundaries
+- 2023-05-19T20:28:54Z | Armani Ferrante | perf: reduce API gas / latency
+- 2023-05-21T10:24:50Z | acheroncrypto | test: expand coverage for SDK
+- 2023-05-23T00:20:46Z | vitalik.eth | docs: clarify auth integrator notes
+- 2023-05-24T14:16:42Z | pcaversaccio | chore: bump Permit2 toolchain pins
+- 2023-05-26T04:12:38Z | banteg | security: tighten TWAP validation
+- 2023-05-27T18:08:34Z | fubuloubu | feat: add telemetry hooks for flash
+- 2023-05-29T08:04:31Z | Recmo | fix: correct allocator rounding / precision
+- 2023-05-30T22:00:27Z | Guillermo Rauch | feat: improve strategy pricing path
+- 2023-06-01T11:56:23Z | Tim Neutkens | fix: harden operator edge-case handling
+- 2023-06-03T01:52:19Z | awkweb | refactor: simplify gauge module boundaries
+- 2023-06-04T15:31:15Z | jxom | perf: reduce bridge gas / latency
+- 2023-06-06T05:27:11Z | Dan Abramov | test: expand coverage for nonce
+- 2023-06-07T19:23:07Z | Hayden Adams | docs: clarify routing integrator notes
+- 2023-06-09T09:19:04Z | transmissions11 | chore: bump settlement toolchain pins
+- 2023-06-10T23:15:00Z | Vectorized | security: tighten oracle validation
+- 2023-06-12T13:10:56Z | mds1 | feat: add telemetry hooks for liquidity
+- 2023-06-14T03:06:52Z | gakonst | fix: correct fees rounding / precision
+- 2023-06-15T17:02:48Z | Richard Moore | feat: improve rewards pricing path
+- 2023-06-17T06:58:44Z | Kamil Mysliwiec | fix: harden vault edge-case handling
+- 2023-06-18T20:54:40Z | Tim Suchanek | refactor: simplify staking module boundaries
+- 2023-06-20T10:50:37Z | Armani Ferrante | perf: reduce restaking gas / latency
+- 2023-06-22T00:46:33Z | acheroncrypto | test: expand coverage for AMM
+- 2023-06-23T14:42:29Z | vitalik.eth | docs: clarify quoter integrator notes
+- 2023-06-25T04:38:25Z | pcaversaccio | chore: bump router toolchain pins
+- 2023-06-26T18:34:21Z | banteg | security: tighten indexer validation
+- 2023-06-28T08:30:17Z | fubuloubu | feat: add telemetry hooks for API
+- 2023-06-29T22:26:13Z | Recmo | fix: correct SDK rounding / precision
+- 2023-07-01T12:05:10Z | Guillermo Rauch | feat: improve auth pricing path
+- 2023-07-03T02:01:06Z | Tim Neutkens | fix: harden Permit2 edge-case handling
+- 2023-07-04T15:57:02Z | awkweb | refactor: simplify TWAP module boundaries
+- 2023-07-06T05:52:58Z | jxom | perf: reduce flash gas / latency
+- 2023-07-07T19:48:54Z | Dan Abramov | test: expand coverage for allocator
+- 2023-07-09T09:44:50Z | Hayden Adams | docs: clarify strategy integrator notes
+- 2023-07-10T23:40:47Z | transmissions11 | chore: bump operator toolchain pins
+- 2023-07-12T13:36:43Z | Vectorized | security: tighten gauge validation
+- 2023-07-14T03:32:39Z | mds1 | feat: add telemetry hooks for bridge
+- 2023-07-15T17:28:35Z | gakonst | fix: correct nonce rounding / precision
+- 2023-07-17T07:24:31Z | Richard Moore | feat: improve routing pricing path
+- 2023-07-18T21:20:27Z | Kamil Mysliwiec | fix: harden settlement edge-case handling
+- 2023-07-20T11:16:23Z | Tim Suchanek | refactor: simplify oracle module boundaries
+- 2023-07-22T01:12:20Z | Armani Ferrante | perf: reduce liquidity gas / latency
+- 2023-07-23T15:08:16Z | acheroncrypto | test: expand coverage for fees
+- 2023-07-25T05:04:12Z | vitalik.eth | docs: clarify rewards integrator notes
+- 2023-07-26T19:00:08Z | pcaversaccio | chore: bump vault toolchain pins
+- 2023-07-28T08:39:04Z | banteg | security: tighten staking validation
+- 2023-07-29T22:35:00Z | fubuloubu | feat: add telemetry hooks for restaking
+- 2023-07-31T12:30:56Z | Recmo | fix: correct AMM rounding / precision
+- 2023-08-02T02:25:53Z | Guillermo Rauch | feat: improve quoter pricing path
+- 2023-08-03T16:21:49Z | Tim Neutkens | fix: harden router edge-case handling
+- 2023-08-05T06:17:45Z | awkweb | refactor: simplify indexer module boundaries
+- 2023-08-06T20:13:41Z | jxom | perf: reduce API gas / latency
+- 2023-08-08T10:09:37Z | Dan Abramov | test: expand coverage for SDK
+- 2023-08-10T00:05:33Z | Hayden Adams | docs: clarify auth integrator notes
+- 2023-08-11T14:01:29Z | transmissions11 | chore: bump Permit2 toolchain pins
+- 2023-08-13T03:57:26Z | Vectorized | security: tighten TWAP validation
+- 2023-08-14T17:53:22Z | mds1 | feat: add telemetry hooks for flash
+- 2023-08-16T07:49:18Z | gakonst | fix: correct allocator rounding / precision
+- 2023-08-17T21:45:14Z | Richard Moore | feat: improve strategy pricing path
+- 2023-08-19T11:41:10Z | Kamil Mysliwiec | fix: harden operator edge-case handling
+- 2023-08-21T01:37:06Z | Tim Suchanek | refactor: simplify gauge module boundaries
+- 2023-08-22T15:33:03Z | Armani Ferrante | perf: reduce bridge gas / latency
+- 2023-08-24T05:11:59Z | acheroncrypto | test: expand coverage for nonce
+- 2023-08-25T19:07:55Z | vitalik.eth | docs: clarify routing integrator notes
+- 2023-08-27T09:03:51Z | pcaversaccio | chore: bump settlement toolchain pins
+- 2023-08-28T22:59:47Z | banteg | security: tighten oracle validation
+- 2023-08-30T12:55:43Z | fubuloubu | feat: add telemetry hooks for liquidity
+- 2023-09-01T02:51:39Z | Recmo | fix: correct fees rounding / precision
+- 2023-09-02T16:47:36Z | Guillermo Rauch | feat: improve rewards pricing path
+- 2023-09-04T06:43:32Z | Tim Neutkens | fix: harden vault edge-case handling
+- 2023-09-05T20:39:28Z | awkweb | refactor: simplify staking module boundaries
+- 2023-09-07T10:35:24Z | jxom | perf: reduce restaking gas / latency
+- 2023-09-09T00:31:20Z | Dan Abramov | test: expand coverage for AMM
+- 2023-09-10T14:27:16Z | Hayden Adams | docs: clarify quoter integrator notes
+- 2023-09-12T04:23:12Z | transmissions11 | chore: bump router toolchain pins
+- 2023-09-13T18:19:09Z | Vectorized | security: tighten indexer validation
+- 2023-09-15T08:15:05Z | mds1 | feat: add telemetry hooks for API
+- 2023-09-16T22:11:01Z | gakonst | fix: correct SDK rounding / precision
+- 2023-09-18T12:06:57Z | Richard Moore | feat: improve auth pricing path
+- 2023-09-20T01:45:53Z | Kamil Mysliwiec | fix: harden Permit2 edge-case handling
+- 2023-09-21T15:41:49Z | Tim Suchanek | refactor: simplify TWAP module boundaries
+- 2023-09-23T05:37:45Z | Armani Ferrante | perf: reduce flash gas / latency
+- 2023-09-24T19:33:42Z | acheroncrypto | test: expand coverage for allocator
+- 2023-09-26T09:29:38Z | vitalik.eth | docs: clarify strategy integrator notes
+- 2023-09-27T23:25:34Z | pcaversaccio | chore: bump operator toolchain pins
+- 2023-09-29T13:21:30Z | banteg | security: tighten gauge validation
+- 2023-10-01T03:17:26Z | fubuloubu | feat: add telemetry hooks for bridge
+- 2023-10-02T17:13:22Z | Recmo | fix: correct nonce rounding / precision
+- 2023-10-04T07:09:18Z | Guillermo Rauch | feat: improve routing pricing path
+- 2023-10-05T21:05:15Z | Tim Neutkens | fix: harden settlement edge-case handling
+- 2023-10-07T11:01:11Z | awkweb | refactor: simplify oracle module boundaries
+- 2023-10-09T00:57:07Z | jxom | perf: reduce liquidity gas / latency
+- 2023-10-10T14:53:03Z | Dan Abramov | test: expand coverage for fees
+- 2023-10-12T04:48:59Z | Hayden Adams | docs: clarify rewards integrator notes
+- 2023-10-13T18:44:55Z | transmissions11 | chore: bump vault toolchain pins
+- 2023-10-15T08:40:52Z | Vectorized | security: tighten staking validation
+- 2023-10-16T22:19:48Z | mds1 | feat: add telemetry hooks for restaking
+- 2023-10-18T12:15:44Z | gakonst | fix: correct AMM rounding / precision
+- 2023-10-20T02:11:40Z | Richard Moore | feat: improve quoter pricing path
+- 2023-10-21T16:07:36Z | Kamil Mysliwiec | fix: harden router edge-case handling
+- 2023-10-23T06:03:32Z | Tim Suchanek | refactor: simplify indexer module boundaries
+- 2023-10-24T19:59:28Z | Armani Ferrante | perf: reduce API gas / latency
+- 2023-10-26T09:55:25Z | acheroncrypto | test: expand coverage for SDK
+- 2023-10-27T23:51:21Z | vitalik.eth | docs: clarify auth integrator notes
+- 2023-10-29T13:47:17Z | pcaversaccio | chore: bump Permit2 toolchain pins
+- 2023-10-31T03:43:13Z | banteg | security: tighten TWAP validation
+- 2023-11-01T17:39:09Z | fubuloubu | feat: add telemetry hooks for flash
+- 2023-11-03T07:35:05Z | Recmo | fix: correct allocator rounding / precision
+- 2023-11-04T21:30:01Z | Guillermo Rauch | feat: improve strategy pricing path
+- 2023-11-06T11:25:58Z | Tim Neutkens | fix: harden operator edge-case handling
+- 2023-11-08T01:21:54Z | awkweb | refactor: simplify gauge module boundaries
+- 2023-11-09T15:17:50Z | jxom | perf: reduce bridge gas / latency
+- 2023-11-11T05:13:46Z | Dan Abramov | test: expand coverage for nonce
+- 2023-11-12T18:52:42Z | Hayden Adams | docs: clarify routing integrator notes
+- 2023-11-14T08:48:38Z | transmissions11 | chore: bump settlement toolchain pins
+- 2023-11-15T22:44:34Z | Vectorized | security: tighten oracle validation
+- 2023-11-17T12:40:31Z | mds1 | feat: add telemetry hooks for liquidity
+- 2023-11-19T02:36:27Z | gakonst | fix: correct fees rounding / precision
+- 2023-11-20T16:32:23Z | Richard Moore | feat: improve rewards pricing path
+- 2023-11-22T06:28:19Z | Kamil Mysliwiec | fix: harden vault edge-case handling
+- 2023-11-23T20:24:15Z | Tim Suchanek | refactor: simplify staking module boundaries
+- 2023-11-25T10:20:11Z | Armani Ferrante | perf: reduce restaking gas / latency
+- 2023-11-27T00:16:08Z | acheroncrypto | test: expand coverage for AMM
+- 2023-11-28T14:12:04Z | vitalik.eth | docs: clarify quoter integrator notes
+- 2023-11-30T04:08:00Z | pcaversaccio | chore: bump router toolchain pins
+- 2023-12-01T18:03:56Z | banteg | security: tighten indexer validation
+- 2023-12-03T07:59:52Z | fubuloubu | feat: add telemetry hooks for API
+- 2023-12-04T21:55:48Z | Recmo | fix: correct SDK rounding / precision
+- 2023-12-06T11:51:44Z | Guillermo Rauch | feat: improve auth pricing path
+- 2023-12-08T01:47:41Z | Tim Neutkens | fix: harden Permit2 edge-case handling
+- 2023-12-09T15:26:37Z | awkweb | refactor: simplify TWAP module boundaries
+- 2023-12-11T05:22:33Z | jxom | perf: reduce flash gas / latency
+- 2023-12-12T19:18:29Z | Dan Abramov | test: expand coverage for allocator
+- 2023-12-14T09:14:25Z | Hayden Adams | docs: clarify strategy integrator notes
+- 2023-12-15T23:10:21Z | transmissions11 | chore: bump operator toolchain pins
+- 2023-12-17T13:06:17Z | Vectorized | security: tighten gauge validation
+- 2023-12-19T03:02:14Z | mds1 | feat: add telemetry hooks for bridge
+- 2023-12-20T16:58:10Z | gakonst | fix: correct nonce rounding / precision
+- 2023-12-22T06:54:06Z | Richard Moore | feat: improve routing pricing path
+- 2023-12-23T20:50:02Z | Kamil Mysliwiec | fix: harden settlement edge-case handling
+- 2023-12-25T10:45:58Z | Tim Suchanek | refactor: simplify oracle module boundaries
+- 2023-12-27T00:41:54Z | Armani Ferrante | perf: reduce liquidity gas / latency
+- 2023-12-28T14:37:50Z | acheroncrypto | test: expand coverage for fees
+- 2023-12-30T04:33:47Z | vitalik.eth | docs: clarify rewards integrator notes
+- 2023-12-31T18:29:43Z | pcaversaccio | chore: bump vault toolchain pins
+- 2024-01-02T08:25:39Z | banteg | security: tighten staking validation
+- 2024-01-03T22:21:35Z | fubuloubu | feat: add telemetry hooks for restaking
+- 2024-01-05T12:00:31Z | Recmo | fix: correct AMM rounding / precision
+- 2024-01-07T01:56:27Z | Guillermo Rauch | feat: improve quoter pricing path
+- 2024-01-08T15:52:23Z | Tim Neutkens | fix: harden router edge-case handling
+- 2024-01-10T05:48:20Z | awkweb | refactor: simplify indexer module boundaries
+- 2024-01-11T19:44:16Z | jxom | perf: reduce API gas / latency
+- 2024-01-13T09:40:12Z | Dan Abramov | test: expand coverage for SDK
+- 2024-01-14T23:36:08Z | Hayden Adams | docs: clarify auth integrator notes
+- 2024-01-16T13:32:04Z | transmissions11 | chore: bump Permit2 toolchain pins
+- 2024-01-18T03:28:00Z | Vectorized | security: tighten TWAP validation
+- 2024-01-19T17:23:57Z | mds1 | feat: add telemetry hooks for flash
+- 2024-01-21T07:19:53Z | gakonst | fix: correct allocator rounding / precision
+- 2024-01-22T21:15:49Z | Richard Moore | feat: improve strategy pricing path
+- 2024-01-24T11:11:45Z | Kamil Mysliwiec | fix: harden operator edge-case handling
+- 2024-01-26T01:07:41Z | Tim Suchanek | refactor: simplify gauge module boundaries
+- 2024-01-27T15:03:37Z | Armani Ferrante | perf: reduce bridge gas / latency
+- 2024-01-29T04:59:33Z | acheroncrypto | test: expand coverage for nonce
+- 2024-01-30T18:55:30Z | vitalik.eth | docs: clarify routing integrator notes
+- 2024-02-01T08:34:26Z | pcaversaccio | chore: bump settlement toolchain pins
+- 2024-02-02T22:30:22Z | banteg | security: tighten oracle validation
+- 2024-02-04T12:26:18Z | fubuloubu | feat: add telemetry hooks for liquidity
+- 2024-02-06T02:22:14Z | Recmo | fix: correct fees rounding / precision
+- 2024-02-07T16:17:10Z | Guillermo Rauch | feat: improve rewards pricing path
+- 2024-02-09T06:13:06Z | Tim Neutkens | fix: harden vault edge-case handling
+- 2024-02-10T20:09:03Z | awkweb | refactor: simplify staking module boundaries
+- 2024-02-12T10:04:59Z | jxom | perf: reduce restaking gas / latency
+- 2024-02-14T00:00:55Z | Dan Abramov | test: expand coverage for AMM
+- 2024-02-15T13:56:51Z | Hayden Adams | docs: clarify quoter integrator notes
+- 2024-02-17T03:52:47Z | transmissions11 | chore: bump router toolchain pins
+- 2024-02-18T17:48:43Z | Vectorized | security: tighten indexer validation
+- 2024-02-20T07:44:39Z | mds1 | feat: add telemetry hooks for API
+- 2024-02-21T21:40:36Z | gakonst | fix: correct SDK rounding / precision
+- 2024-02-23T11:36:32Z | Richard Moore | feat: improve auth pricing path
+- 2024-02-25T01:32:28Z | Kamil Mysliwiec | fix: harden Permit2 edge-case handling
+- 2024-02-26T15:28:24Z | Tim Suchanek | refactor: simplify TWAP module boundaries
+- 2024-02-28T05:07:20Z | Armani Ferrante | perf: reduce flash gas / latency
+- 2024-02-29T19:03:16Z | acheroncrypto | test: expand coverage for allocator
+- 2024-03-02T08:59:13Z | vitalik.eth | docs: clarify strategy integrator notes
+- 2024-03-03T22:55:09Z | pcaversaccio | chore: bump operator toolchain pins
+- 2024-03-05T12:51:05Z | banteg | security: tighten gauge validation
+- 2024-03-07T02:47:01Z | fubuloubu | feat: add telemetry hooks for bridge
+- 2024-03-08T16:42:57Z | Recmo | fix: correct nonce rounding / precision
+- 2024-03-10T06:38:53Z | Guillermo Rauch | feat: improve routing pricing path
+- 2024-03-11T20:34:49Z | Tim Neutkens | fix: harden settlement edge-case handling
+- 2024-03-13T10:30:46Z | awkweb | refactor: simplify oracle module boundaries
+- 2024-03-15T00:26:42Z | jxom | perf: reduce liquidity gas / latency
+- 2024-03-16T14:22:38Z | Dan Abramov | test: expand coverage for fees
+- 2024-03-18T04:18:34Z | Hayden Adams | docs: clarify rewards integrator notes
+- 2024-03-19T18:14:30Z | transmissions11 | chore: bump vault toolchain pins
+- 2024-03-21T08:10:26Z | Vectorized | security: tighten staking validation
+- 2024-03-22T22:06:22Z | mds1 | feat: add telemetry hooks for restaking
+- 2024-03-24T12:02:19Z | gakonst | fix: correct AMM rounding / precision
+- 2024-03-26T01:41:15Z | Richard Moore | feat: improve quoter pricing path
+- 2024-03-27T15:37:11Z | Kamil Mysliwiec | fix: harden router edge-case handling
+- 2024-03-29T05:33:07Z | Tim Suchanek | refactor: simplify indexer module boundaries
+- 2024-03-30T19:29:03Z | Armani Ferrante | perf: reduce API gas / latency
+- 2024-04-01T09:24:59Z | acheroncrypto | test: expand coverage for SDK
+- 2024-04-02T23:20:55Z | vitalik.eth | docs: clarify auth integrator notes
+- 2024-04-04T13:16:52Z | pcaversaccio | chore: bump Permit2 toolchain pins
+- 2024-04-06T03:12:48Z | banteg | security: tighten TWAP validation
+- 2024-04-07T17:08:44Z | fubuloubu | feat: add telemetry hooks for flash
+- 2024-04-09T07:04:40Z | Recmo | fix: correct allocator rounding / precision
+- 2024-04-10T21:00:36Z | Guillermo Rauch | feat: improve strategy pricing path
+- 2024-04-12T10:56:32Z | Tim Neutkens | fix: harden operator edge-case handling
+- 2024-04-14T00:52:28Z | awkweb | refactor: simplify gauge module boundaries
+- 2024-04-15T14:48:25Z | jxom | perf: reduce bridge gas / latency
+- 2024-04-17T04:44:21Z | Dan Abramov | test: expand coverage for nonce
+- 2024-04-18T18:40:17Z | Hayden Adams | docs: clarify routing integrator notes
+- 2024-04-20T08:36:13Z | transmissions11 | chore: bump settlement toolchain pins
+- 2024-04-21T22:15:09Z | Vectorized | security: tighten oracle validation
+- 2024-04-23T12:11:05Z | mds1 | feat: add telemetry hooks for liquidity
+- 2024-04-25T02:07:02Z | gakonst | fix: correct fees rounding / precision
+- 2024-04-26T16:02:58Z | Richard Moore | feat: improve rewards pricing path
+- 2024-04-28T05:58:54Z | Kamil Mysliwiec | fix: harden vault edge-case handling
+- 2024-04-29T19:54:50Z | Tim Suchanek | refactor: simplify staking module boundaries
+- 2024-05-01T09:50:46Z | Armani Ferrante | perf: reduce restaking gas / latency
+- 2024-05-02T23:46:42Z | acheroncrypto | test: expand coverage for AMM
+- 2024-05-04T13:42:38Z | vitalik.eth | docs: clarify quoter integrator notes
+- 2024-05-06T03:38:35Z | pcaversaccio | chore: bump router toolchain pins
+- 2024-05-07T17:34:31Z | banteg | security: tighten indexer validation
+- 2024-05-09T07:30:27Z | fubuloubu | feat: add telemetry hooks for API
+- 2024-05-10T21:26:23Z | Recmo | fix: correct SDK rounding / precision
+- 2024-05-12T11:21:19Z | Guillermo Rauch | feat: improve auth pricing path
+- 2024-05-14T01:17:15Z | Tim Neutkens | fix: harden Permit2 edge-case handling
+- 2024-05-15T15:13:11Z | awkweb | refactor: simplify TWAP module boundaries
+- 2024-05-17T05:09:08Z | jxom | perf: reduce flash gas / latency
+- 2024-05-18T18:48:04Z | Dan Abramov | test: expand coverage for allocator
+- 2024-05-20T08:44:00Z | Hayden Adams | docs: clarify strategy integrator notes
+- 2024-05-21T22:39:56Z | transmissions11 | chore: bump operator toolchain pins
+- 2024-05-23T12:35:52Z | Vectorized | security: tighten gauge validation
+- 2024-05-25T02:31:48Z | mds1 | feat: add telemetry hooks for bridge
+- 2024-05-26T16:27:44Z | gakonst | fix: correct nonce rounding / precision
+- 2024-05-28T06:23:41Z | Richard Moore | feat: improve routing pricing path
+- 2024-05-29T20:19:37Z | Kamil Mysliwiec | fix: harden settlement edge-case handling
+- 2024-05-31T10:15:33Z | Tim Suchanek | refactor: simplify oracle module boundaries
+- 2024-06-02T00:11:29Z | Armani Ferrante | perf: reduce liquidity gas / latency
+- 2024-06-03T14:07:25Z | acheroncrypto | test: expand coverage for fees
+- 2024-06-05T04:03:21Z | vitalik.eth | docs: clarify rewards integrator notes
+- 2024-06-06T17:59:17Z | pcaversaccio | chore: bump vault toolchain pins
+- 2024-06-08T07:55:14Z | banteg | security: tighten staking validation
+- 2024-06-09T21:51:10Z | fubuloubu | feat: add telemetry hooks for restaking
+- 2024-06-11T11:47:06Z | Recmo | fix: correct AMM rounding / precision
+- 2024-06-13T01:43:02Z | Guillermo Rauch | feat: improve quoter pricing path
+- 2024-06-14T15:21:58Z | Tim Neutkens | fix: harden router edge-case handling
+- 2024-06-16T05:17:54Z | awkweb | refactor: simplify indexer module boundaries
+- 2024-06-17T19:13:51Z | jxom | perf: reduce API gas / latency
+- 2024-06-19T09:09:47Z | Dan Abramov | test: expand coverage for SDK
+- 2024-06-20T23:05:43Z | Hayden Adams | docs: clarify auth integrator notes
+- 2024-06-22T13:01:39Z | transmissions11 | chore: bump Permit2 toolchain pins
+- 2024-06-24T02:57:35Z | Vectorized | security: tighten TWAP validation
+- 2024-06-25T16:53:31Z | mds1 | feat: add telemetry hooks for flash
+- 2024-06-27T06:49:27Z | gakonst | fix: correct allocator rounding / precision
+- 2024-06-28T20:45:24Z | Richard Moore | feat: improve strategy pricing path
+- 2024-06-30T10:41:20Z | Kamil Mysliwiec | fix: harden operator edge-case handling
+- 2024-07-02T00:37:16Z | Tim Suchanek | refactor: simplify gauge module boundaries
+- 2024-07-03T14:33:12Z | Armani Ferrante | perf: reduce bridge gas / latency
+- 2024-07-05T04:29:08Z | acheroncrypto | test: expand coverage for nonce
+- 2024-07-06T18:25:04Z | vitalik.eth | docs: clarify routing integrator notes
+- 2024-07-08T08:21:00Z | pcaversaccio | chore: bump settlement toolchain pins
+- 2024-07-09T22:16:57Z | banteg | security: tighten oracle validation
+- 2024-07-11T11:55:53Z | fubuloubu | feat: add telemetry hooks for liquidity
+- 2024-07-13T01:51:49Z | Recmo | fix: correct fees rounding / precision
+- 2024-07-14T15:47:45Z | Guillermo Rauch | feat: improve rewards pricing path
+- 2024-07-16T05:43:41Z | Tim Neutkens | fix: harden vault edge-case handling
+- 2024-07-17T19:39:37Z | awkweb | refactor: simplify staking module boundaries
+- 2024-07-19T09:35:33Z | jxom | perf: reduce restaking gas / latency
+- 2024-07-20T23:31:30Z | Dan Abramov | test: expand coverage for AMM
+- 2024-07-22T13:27:26Z | Hayden Adams | docs: clarify quoter integrator notes
+- 2024-07-24T03:23:22Z | transmissions11 | chore: bump router toolchain pins
+- 2024-07-25T17:19:18Z | Vectorized | security: tighten indexer validation
+- 2024-07-27T07:15:14Z | mds1 | feat: add telemetry hooks for API
+- 2024-07-28T21:11:10Z | gakonst | fix: correct SDK rounding / precision
+- 2024-07-30T11:07:07Z | Richard Moore | feat: improve auth pricing path
+- 2024-08-01T01:03:03Z | Kamil Mysliwiec | fix: harden Permit2 edge-case handling
+- 2024-08-02T14:58:59Z | Tim Suchanek | refactor: simplify TWAP module boundaries
+- 2024-08-04T04:54:55Z | Armani Ferrante | perf: reduce flash gas / latency
+- 2024-08-05T18:50:51Z | acheroncrypto | test: expand coverage for allocator
+- 2024-08-07T08:29:47Z | vitalik.eth | docs: clarify strategy integrator notes
+- 2024-08-08T22:25:43Z | pcaversaccio | chore: bump operator toolchain pins
+- 2024-08-10T12:21:40Z | banteg | security: tighten gauge validation
+- 2024-08-12T02:17:36Z | fubuloubu | feat: add telemetry hooks for bridge
+- 2024-08-13T16:13:32Z | Recmo | fix: correct nonce rounding / precision
+- 2024-08-15T06:08:28Z | Guillermo Rauch | feat: improve routing pricing path
+- 2024-08-16T20:04:24Z | Tim Neutkens | fix: harden settlement edge-case handling
+- 2024-08-18T10:00:20Z | awkweb | refactor: simplify oracle module boundaries
+- 2024-08-19T23:56:16Z | jxom | perf: reduce liquidity gas / latency
+- 2024-08-21T13:52:13Z | Dan Abramov | test: expand coverage for fees
+- 2024-08-23T03:48:09Z | Hayden Adams | docs: clarify rewards integrator notes
+- 2024-08-24T17:44:05Z | transmissions11 | chore: bump vault toolchain pins
+- 2024-08-26T07:40:01Z | Vectorized | security: tighten staking validation
+- 2024-08-27T21:35:57Z | mds1 | feat: add telemetry hooks for restaking
+- 2024-08-29T11:31:53Z | gakonst | fix: correct AMM rounding / precision
+- 2024-08-31T01:27:49Z | Richard Moore | feat: improve quoter pricing path
+- 2024-09-01T15:23:46Z | Kamil Mysliwiec | fix: harden router edge-case handling
+- 2024-09-03T05:02:42Z | Tim Suchanek | refactor: simplify indexer module boundaries
+- 2024-09-04T18:58:38Z | Armani Ferrante | perf: reduce API gas / latency
+- 2024-09-06T08:54:34Z | acheroncrypto | test: expand coverage for SDK
+- 2024-09-07T22:50:30Z | vitalik.eth | docs: clarify auth integrator notes
+- 2024-09-09T12:46:26Z | pcaversaccio | chore: bump Permit2 toolchain pins
+- 2024-09-11T02:42:22Z | banteg | security: tighten TWAP validation
+- 2024-09-12T16:38:19Z | fubuloubu | feat: add telemetry hooks for flash
+- 2024-09-14T06:34:15Z | Recmo | fix: correct allocator rounding / precision
+- 2024-09-15T20:30:11Z | Guillermo Rauch | feat: improve strategy pricing path
+- 2024-09-17T10:26:07Z | Tim Neutkens | fix: harden operator edge-case handling
+- 2024-09-19T00:22:03Z | awkweb | refactor: simplify gauge module boundaries
+- 2024-09-20T14:17:59Z | jxom | perf: reduce bridge gas / latency
+- 2024-09-22T04:13:56Z | Dan Abramov | test: expand coverage for nonce
+- 2024-09-23T18:09:52Z | Hayden Adams | docs: clarify routing integrator notes
+- 2024-09-25T08:05:48Z | transmissions11 | chore: bump settlement toolchain pins
+- 2024-09-26T22:01:44Z | Vectorized | security: tighten oracle validation
+- 2024-09-28T11:57:40Z | mds1 | feat: add telemetry hooks for liquidity
+- 2024-09-30T01:36:36Z | gakonst | fix: correct fees rounding / precision
+- 2024-10-01T15:32:32Z | Richard Moore | feat: improve rewards pricing path
+- 2024-10-03T05:28:29Z | Kamil Mysliwiec | fix: harden vault edge-case handling
+- 2024-10-04T19:24:25Z | Tim Suchanek | refactor: simplify staking module boundaries
+- 2024-10-06T09:20:21Z | Armani Ferrante | perf: reduce restaking gas / latency
+- 2024-10-07T23:16:17Z | acheroncrypto | test: expand coverage for AMM
+- 2024-10-09T13:12:13Z | vitalik.eth | docs: clarify quoter integrator notes
+- 2024-10-11T03:08:09Z | pcaversaccio | chore: bump router toolchain pins
+- 2024-10-12T17:04:05Z | banteg | security: tighten indexer validation
+- 2024-10-14T07:00:02Z | fubuloubu | feat: add telemetry hooks for API
+- 2024-10-15T20:55:58Z | Recmo | fix: correct SDK rounding / precision
+- 2024-10-17T10:51:54Z | Guillermo Rauch | feat: improve auth pricing path
+- 2024-10-19T00:47:50Z | Tim Neutkens | fix: harden Permit2 edge-case handling
+- 2024-10-20T14:43:46Z | awkweb | refactor: simplify TWAP module boundaries
+- 2024-10-22T04:39:42Z | jxom | perf: reduce flash gas / latency
+- 2024-10-23T18:35:38Z | Dan Abramov | test: expand coverage for allocator
+- 2024-10-25T08:31:35Z | Hayden Adams | docs: clarify strategy integrator notes
+- 2024-10-26T22:10:31Z | transmissions11 | chore: bump operator toolchain pins
+- 2024-10-28T12:06:27Z | Vectorized | security: tighten gauge validation
+- 2024-10-30T02:02:23Z | mds1 | feat: add telemetry hooks for bridge
+- 2024-10-31T15:58:19Z | gakonst | fix: correct nonce rounding / precision
+- 2024-11-02T05:54:15Z | Richard Moore | feat: improve routing pricing path
+- 2024-11-03T19:50:12Z | Kamil Mysliwiec | fix: harden settlement edge-case handling
+- 2024-11-05T09:46:08Z | Tim Suchanek | refactor: simplify oracle module boundaries
+- 2024-11-06T23:42:04Z | Armani Ferrante | perf: reduce liquidity gas / latency
+- 2024-11-08T13:38:00Z | acheroncrypto | test: expand coverage for fees
+- 2024-11-10T03:33:56Z | vitalik.eth | docs: clarify rewards integrator notes
+- 2024-11-11T17:29:52Z | pcaversaccio | chore: bump vault toolchain pins
+- 2024-11-13T07:25:48Z | banteg | security: tighten staking validation
+- 2024-11-14T21:21:45Z | fubuloubu | feat: add telemetry hooks for restaking
+- 2024-11-16T11:17:41Z | Recmo | fix: correct AMM rounding / precision
+- 2024-11-18T01:12:37Z | Guillermo Rauch | feat: improve quoter pricing path
+- 2024-11-19T15:08:33Z | Tim Neutkens | fix: harden router edge-case handling
+- 2024-11-21T05:04:29Z | awkweb | refactor: simplify indexer module boundaries
+- 2024-11-22T18:43:25Z | jxom | perf: reduce API gas / latency
+- 2024-11-24T08:39:21Z | Dan Abramov | test: expand coverage for SDK
+- 2024-11-25T22:35:18Z | Hayden Adams | docs: clarify auth integrator notes
+- 2024-11-27T12:31:14Z | transmissions11 | chore: bump Permit2 toolchain pins
+- 2024-11-29T02:27:10Z | Vectorized | security: tighten TWAP validation
+- 2024-11-30T16:23:06Z | mds1 | feat: add telemetry hooks for flash
+- 2024-12-02T06:19:02Z | gakonst | fix: correct allocator rounding / precision
+- 2024-12-03T20:14:58Z | Richard Moore | feat: improve strategy pricing path
+- 2024-12-05T10:10:54Z | Kamil Mysliwiec | fix: harden operator edge-case handling
+- 2024-12-07T00:06:51Z | Tim Suchanek | refactor: simplify gauge module boundaries
+- 2024-12-08T14:02:47Z | Armani Ferrante | perf: reduce bridge gas / latency
+- 2024-12-10T03:58:43Z | acheroncrypto | test: expand coverage for nonce
+- 2024-12-11T17:54:39Z | vitalik.eth | docs: clarify routing integrator notes
+- 2024-12-13T07:50:35Z | pcaversaccio | chore: bump settlement toolchain pins
+- 2024-12-14T21:46:31Z | banteg | security: tighten oracle validation
+- 2024-12-16T11:42:27Z | fubuloubu | feat: add telemetry hooks for liquidity
+- 2024-12-18T01:38:24Z | Recmo | fix: correct fees rounding / precision
+- 2024-12-19T15:17:20Z | Guillermo Rauch | feat: improve rewards pricing path
+- 2024-12-21T05:13:16Z | Tim Neutkens | fix: harden vault edge-case handling
+- 2024-12-22T19:09:12Z | awkweb | refactor: simplify staking module boundaries
+- 2024-12-24T09:05:08Z | jxom | perf: reduce restaking gas / latency
+- 2024-12-25T23:01:04Z | Dan Abramov | test: expand coverage for AMM
+- 2024-12-27T12:57:01Z | Hayden Adams | docs: clarify quoter integrator notes
+- 2024-12-29T02:52:57Z | transmissions11 | chore: bump router toolchain pins
+- 2024-12-30T16:48:53Z | Vectorized | security: tighten indexer validation
+- 2025-01-01T06:44:49Z | mds1 | feat: add telemetry hooks for API
+- 2025-01-02T20:40:45Z | gakonst | fix: correct SDK rounding / precision
+- 2025-01-04T10:36:41Z | Richard Moore | feat: improve auth pricing path
+- 2025-01-06T00:32:37Z | Kamil Mysliwiec | fix: harden Permit2 edge-case handling
+- 2025-01-07T14:28:34Z | Tim Suchanek | refactor: simplify TWAP module boundaries
+- 2025-01-09T04:24:30Z | Armani Ferrante | perf: reduce flash gas / latency
+- 2025-01-10T18:20:26Z | acheroncrypto | test: expand coverage for allocator
+- 2025-01-12T08:16:22Z | vitalik.eth | docs: clarify strategy integrator notes
+- 2025-01-13T22:12:18Z | pcaversaccio | chore: bump operator toolchain pins
+- 2025-01-15T11:51:14Z | banteg | security: tighten gauge validation
+- 2025-01-17T01:47:10Z | fubuloubu | feat: add telemetry hooks for bridge
+- 2025-01-18T15:43:07Z | Recmo | fix: correct nonce rounding / precision
+- 2025-01-20T05:39:03Z | Guillermo Rauch | feat: improve routing pricing path
+- 2025-01-21T19:34:59Z | Tim Neutkens | fix: harden settlement edge-case handling
+- 2025-01-23T09:30:55Z | awkweb | refactor: simplify oracle module boundaries
+- 2025-01-24T23:26:51Z | jxom | perf: reduce liquidity gas / latency
+- 2025-01-26T13:22:47Z | Dan Abramov | test: expand coverage for fees
+- 2025-01-28T03:18:43Z | Hayden Adams | docs: clarify rewards integrator notes
+- 2025-01-29T17:14:40Z | transmissions11 | chore: bump vault toolchain pins
+- 2025-01-31T07:10:36Z | Vectorized | security: tighten staking validation
+- 2025-02-01T21:06:32Z | mds1 | feat: add telemetry hooks for restaking
+- 2025-02-03T11:02:28Z | gakonst | fix: correct AMM rounding / precision
+- 2025-02-05T00:58:24Z | Richard Moore | feat: improve quoter pricing path
+- 2025-02-06T14:54:20Z | Kamil Mysliwiec | fix: harden router edge-case handling
+- 2025-02-08T04:50:17Z | Tim Suchanek | refactor: simplify indexer module boundaries
+- 2025-02-09T18:46:13Z | Armani Ferrante | perf: reduce API gas / latency
+- 2025-02-11T08:25:09Z | acheroncrypto | test: expand coverage for SDK
+- 2025-02-12T22:21:05Z | vitalik.eth | docs: clarify auth integrator notes
+- 2025-02-14T12:17:01Z | pcaversaccio | chore: bump Permit2 toolchain pins
+- 2025-02-16T02:12:57Z | banteg | security: tighten TWAP validation
+- 2025-02-17T16:08:53Z | fubuloubu | feat: add telemetry hooks for flash
+- 2025-02-19T06:04:50Z | Recmo | fix: correct allocator rounding / precision
+- 2025-02-20T19:59:46Z | Guillermo Rauch | feat: improve strategy pricing path
+- 2025-02-22T09:55:42Z | Tim Neutkens | fix: harden operator edge-case handling
+- 2025-02-23T23:51:38Z | awkweb | refactor: simplify gauge module boundaries
+- 2025-02-25T13:47:34Z | jxom | perf: reduce bridge gas / latency
+- 2025-02-27T03:43:30Z | Dan Abramov | test: expand coverage for nonce
+- 2025-02-28T17:39:26Z | Hayden Adams | docs: clarify routing integrator notes
+- 2025-03-02T07:35:23Z | transmissions11 | chore: bump settlement toolchain pins
+- 2025-03-03T21:31:19Z | Vectorized | security: tighten oracle validation
+- 2025-03-05T11:27:15Z | mds1 | feat: add telemetry hooks for liquidity
+- 2025-03-07T01:23:11Z | gakonst | fix: correct fees rounding / precision
+- 2025-03-08T15:19:07Z | Richard Moore | feat: improve rewards pricing path
+- 2025-03-10T04:58:03Z | Kamil Mysliwiec | fix: harden vault edge-case handling
+- 2025-03-11T18:53:59Z | Tim Suchanek | refactor: simplify staking module boundaries
+- 2025-03-13T08:49:56Z | Armani Ferrante | perf: reduce restaking gas / latency
+- 2025-03-14T22:45:52Z | acheroncrypto | test: expand coverage for AMM
+- 2025-03-16T12:41:48Z | vitalik.eth | docs: clarify quoter integrator notes
+- 2025-03-18T02:37:44Z | pcaversaccio | chore: bump router toolchain pins
+- 2025-03-19T16:33:40Z | banteg | security: tighten indexer validation
+- 2025-03-21T06:29:36Z | fubuloubu | feat: add telemetry hooks for API
+- 2025-03-22T20:25:32Z | Recmo | fix: correct SDK rounding / precision
+- 2025-03-24T10:21:29Z | Guillermo Rauch | feat: improve auth pricing path
+- 2025-03-26T00:17:25Z | Tim Neutkens | fix: harden Permit2 edge-case handling
+- 2025-03-27T14:13:21Z | awkweb | refactor: simplify TWAP module boundaries
+- 2025-03-29T04:09:17Z | jxom | perf: reduce flash gas / latency
+- 2025-03-30T18:05:13Z | Dan Abramov | test: expand coverage for allocator
+- 2025-04-01T08:01:09Z | Hayden Adams | docs: clarify strategy integrator notes
+- 2025-04-02T21:57:06Z | transmissions11 | chore: bump operator toolchain pins
+- 2025-04-04T11:53:02Z | Vectorized | security: tighten gauge validation
+- 2025-04-06T01:31:58Z | mds1 | feat: add telemetry hooks for bridge
+- 2025-04-07T15:27:54Z | gakonst | fix: correct nonce rounding / precision
+- 2025-04-09T05:23:50Z | Richard Moore | feat: improve routing pricing path
+- 2025-04-10T19:19:46Z | Kamil Mysliwiec | fix: harden settlement edge-case handling
+- 2025-04-12T09:15:42Z | Tim Suchanek | refactor: simplify oracle module boundaries
+- 2025-04-13T23:11:39Z | Armani Ferrante | perf: reduce liquidity gas / latency
+- 2025-04-15T13:07:35Z | acheroncrypto | test: expand coverage for fees
+- 2025-04-17T03:03:31Z | vitalik.eth | docs: clarify rewards integrator notes
+- 2025-04-18T16:59:27Z | pcaversaccio | chore: bump vault toolchain pins
+- 2025-04-20T06:55:23Z | banteg | security: tighten staking validation
+- 2025-04-21T20:51:19Z | fubuloubu | feat: add telemetry hooks for restaking
+- 2025-04-23T10:47:15Z | Recmo | fix: correct AMM rounding / precision
+- 2025-04-25T00:43:12Z | Guillermo Rauch | feat: improve quoter pricing path
+- 2025-04-26T14:39:08Z | Tim Neutkens | fix: harden router edge-case handling
+- 2025-04-28T04:35:04Z | awkweb | refactor: simplify indexer module boundaries
+- 2025-04-29T18:31:00Z | jxom | perf: reduce API gas / latency
+- 2025-05-01T08:26:56Z | Dan Abramov | test: expand coverage for SDK
+- 2025-05-02T22:05:52Z | Hayden Adams | docs: clarify auth integrator notes
+- 2025-05-04T12:01:48Z | transmissions11 | chore: bump Permit2 toolchain pins
+- 2025-05-06T01:57:45Z | Vectorized | security: tighten TWAP validation
+- 2025-05-07T15:53:41Z | mds1 | feat: add telemetry hooks for flash
+- 2025-05-09T05:49:37Z | gakonst | fix: correct allocator rounding / precision
+- 2025-05-10T19:45:33Z | Richard Moore | feat: improve strategy pricing path
+- 2025-05-12T09:41:29Z | Kamil Mysliwiec | fix: harden operator edge-case handling
+- 2025-05-13T23:37:25Z | Tim Suchanek | refactor: simplify gauge module boundaries
+- 2025-05-15T13:33:22Z | Armani Ferrante | perf: reduce bridge gas / latency
+- 2025-05-17T03:29:18Z | acheroncrypto | test: expand coverage for nonce
+- 2025-05-18T17:25:14Z | vitalik.eth | docs: clarify routing integrator notes
+- 2025-05-20T07:21:10Z | pcaversaccio | chore: bump settlement toolchain pins
+- 2025-05-21T21:17:06Z | banteg | security: tighten oracle validation
+- 2025-05-23T11:13:02Z | fubuloubu | feat: add telemetry hooks for liquidity
+- 2025-05-25T01:08:58Z | Recmo | fix: correct fees rounding / precision
+- 2025-05-26T15:03:55Z | Guillermo Rauch | feat: improve rewards pricing path
+- 2025-05-28T04:59:51Z | Tim Neutkens | fix: harden vault edge-case handling
+- 2025-05-29T18:38:47Z | awkweb | refactor: simplify staking module boundaries
+- 2025-05-31T08:34:43Z | jxom | perf: reduce restaking gas / latency
+- 2025-06-01T22:30:39Z | Dan Abramov | test: expand coverage for AMM
+- 2025-06-03T12:26:35Z | Hayden Adams | docs: clarify quoter integrator notes
+- 2025-06-05T02:22:31Z | transmissions11 | chore: bump router toolchain pins
+- 2025-06-06T16:18:28Z | Vectorized | security: tighten indexer validation
+- 2025-06-08T06:14:24Z | mds1 | feat: add telemetry hooks for API
+- 2025-06-09T20:10:20Z | gakonst | fix: correct SDK rounding / precision
+- 2025-06-11T10:06:16Z | Richard Moore | feat: improve auth pricing path
+- 2025-06-13T00:02:12Z | Kamil Mysliwiec | fix: harden Permit2 edge-case handling
+- 2025-06-14T13:58:08Z | Tim Suchanek | refactor: simplify TWAP module boundaries
+- 2025-06-16T03:54:04Z | Armani Ferrante | perf: reduce flash gas / latency
+- 2025-06-17T17:50:01Z | acheroncrypto | test: expand coverage for allocator
+- 2025-06-19T07:45:57Z | vitalik.eth | docs: clarify strategy integrator notes
+- 2025-06-20T21:41:53Z | pcaversaccio | chore: bump operator toolchain pins
+- 2025-06-22T11:37:49Z | banteg | security: tighten gauge validation
+- 2025-06-24T01:33:45Z | fubuloubu | feat: add telemetry hooks for bridge
+- 2025-06-25T15:12:41Z | Recmo | fix: correct nonce rounding / precision
+- 2025-06-27T05:08:37Z | Guillermo Rauch | feat: improve routing pricing path
+- 2025-06-28T19:04:34Z | Tim Neutkens | fix: harden settlement edge-case handling
+- 2025-06-30T09:00:30Z | awkweb | refactor: simplify oracle module boundaries
+- 2025-07-01T22:56:26Z | jxom | perf: reduce liquidity gas / latency
+- 2025-07-03T12:52:22Z | Dan Abramov | test: expand coverage for fees
+- 2025-07-05T02:48:18Z | Hayden Adams | docs: clarify rewards integrator notes
+- 2025-07-06T16:44:14Z | transmissions11 | chore: bump vault toolchain pins
+- 2025-07-08T06:40:11Z | Vectorized | security: tighten staking validation
+- 2025-07-09T20:36:07Z | mds1 | feat: add telemetry hooks for restaking
+- 2025-07-11T10:32:03Z | gakonst | fix: correct AMM rounding / precision
+- 2025-07-13T00:27:59Z | Richard Moore | feat: improve quoter pricing path
+- 2025-07-14T14:23:55Z | Kamil Mysliwiec | fix: harden router edge-case handling
+- 2025-07-16T04:19:51Z | Tim Suchanek | refactor: simplify indexer module boundaries
+- 2025-07-17T18:15:47Z | Armani Ferrante | perf: reduce API gas / latency
+- 2025-07-19T08:11:44Z | acheroncrypto | test: expand coverage for SDK
+- 2025-07-20T22:07:40Z | vitalik.eth | docs: clarify auth integrator notes
+- 2025-07-22T11:46:36Z | pcaversaccio | chore: bump Permit2 toolchain pins
+- 2025-07-24T01:42:32Z | banteg | security: tighten TWAP validation
+- 2025-07-25T15:38:28Z | fubuloubu | feat: add telemetry hooks for flash
+- 2025-07-27T05:34:24Z | Recmo | fix: correct allocator rounding / precision
+- 2025-07-28T19:30:20Z | Guillermo Rauch | feat: improve strategy pricing path
+- 2025-07-30T09:26:17Z | Tim Neutkens | fix: harden operator edge-case handling
+- 2025-07-31T23:22:13Z | awkweb | refactor: simplify gauge module boundaries
+- 2025-08-02T13:18:09Z | jxom | perf: reduce bridge gas / latency
+- 2025-08-04T03:14:05Z | Dan Abramov | test: expand coverage for nonce
+- 2025-08-05T17:10:01Z | Hayden Adams | docs: clarify routing integrator notes
+- 2025-08-07T07:05:57Z | transmissions11 | chore: bump settlement toolchain pins
+- 2025-08-08T21:01:53Z | Vectorized | security: tighten oracle validation
+- 2025-08-10T10:57:50Z | mds1 | feat: add telemetry hooks for liquidity
+- 2025-08-12T00:53:46Z | gakonst | fix: correct fees rounding / precision
+- 2025-08-13T14:49:42Z | Richard Moore | feat: improve rewards pricing path
+- 2025-08-15T04:45:38Z | Kamil Mysliwiec | fix: harden vault edge-case handling
+- 2025-08-16T18:41:34Z | Tim Suchanek | refactor: simplify staking module boundaries
+- 2025-08-18T08:20:30Z | Armani Ferrante | perf: reduce restaking gas / latency
+- 2025-08-19T22:16:26Z | acheroncrypto | test: expand coverage for AMM
+- 2025-08-21T12:12:23Z | vitalik.eth | docs: clarify quoter integrator notes
+- 2025-08-23T02:08:19Z | pcaversaccio | chore: bump router toolchain pins
+- 2025-08-24T16:04:15Z | banteg | security: tighten indexer validation
+- 2025-08-26T06:00:11Z | fubuloubu | feat: add telemetry hooks for API
+- 2025-08-27T19:56:07Z | Recmo | fix: correct SDK rounding / precision
+- 2025-08-29T09:51:03Z | Guillermo Rauch | feat: improve auth pricing path
+- 2025-08-30T23:47:00Z | Tim Neutkens | fix: harden Permit2 edge-case handling
+- 2025-09-01T13:42:56Z | awkweb | refactor: simplify TWAP module boundaries
+- 2025-09-03T03:38:52Z | jxom | perf: reduce flash gas / latency
+- 2025-09-04T17:34:48Z | Dan Abramov | test: expand coverage for allocator
+- 2025-09-06T07:30:44Z | Hayden Adams | docs: clarify strategy integrator notes
+- 2025-09-07T21:26:40Z | transmissions11 | chore: bump operator toolchain pins
+- 2025-09-09T11:22:36Z | Vectorized | security: tighten gauge validation
+- 2025-09-11T01:18:33Z | mds1 | feat: add telemetry hooks for bridge
+- 2025-09-12T15:14:29Z | gakonst | fix: correct nonce rounding / precision
+- 2025-09-14T04:53:25Z | Richard Moore | feat: improve routing pricing path
+- 2025-09-15T18:49:21Z | Kamil Mysliwiec | fix: harden settlement edge-case handling
+- 2025-09-17T08:45:17Z | Tim Suchanek | refactor: simplify oracle module boundaries
+- 2025-09-18T22:41:13Z | Armani Ferrante | perf: reduce liquidity gas / latency
+- 2025-09-20T12:37:09Z | acheroncrypto | test: expand coverage for fees
+- 2025-09-22T02:33:06Z | vitalik.eth | docs: clarify rewards integrator notes
+- 2025-09-23T16:29:02Z | pcaversaccio | chore: bump vault toolchain pins
+- 2025-09-25T06:24:58Z | banteg | security: tighten staking validation
+- 2025-09-26T20:20:54Z | fubuloubu | feat: add telemetry hooks for restaking
+- 2025-09-28T10:16:50Z | Recmo | fix: correct AMM rounding / precision
+- 2025-09-30T00:12:46Z | Guillermo Rauch | feat: improve quoter pricing path
+- 2025-10-01T14:08:42Z | Tim Neutkens | fix: harden router edge-case handling
+- 2025-10-03T04:04:39Z | awkweb | refactor: simplify indexer module boundaries
+- 2025-10-04T18:00:35Z | jxom | perf: reduce API gas / latency
+- 2025-10-06T07:56:31Z | Dan Abramov | test: expand coverage for SDK
+- 2025-10-07T21:52:27Z | Hayden Adams | docs: clarify auth integrator notes
+- 2025-10-09T11:48:23Z | transmissions11 | chore: bump Permit2 toolchain pins
+- 2025-10-11T01:27:19Z | Vectorized | security: tighten TWAP validation
+- 2025-10-12T15:23:16Z | mds1 | feat: add telemetry hooks for flash
+- 2025-10-14T05:19:12Z | gakonst | fix: correct allocator rounding / precision
+- 2025-10-15T19:15:08Z | Richard Moore | feat: improve strategy pricing path
+- 2025-10-17T09:11:04Z | Kamil Mysliwiec | fix: harden operator edge-case handling
+- 2025-10-18T23:07:00Z | Tim Suchanek | refactor: simplify gauge module boundaries
+- 2025-10-20T13:02:56Z | Armani Ferrante | perf: reduce bridge gas / latency
+- 2025-10-22T02:58:52Z | acheroncrypto | test: expand coverage for nonce
+- 2025-10-23T16:54:49Z | vitalik.eth | docs: clarify routing integrator notes
+- 2025-10-25T06:50:45Z | pcaversaccio | chore: bump settlement toolchain pins
+- 2025-10-26T20:46:41Z | banteg | security: tighten oracle validation
+- 2025-10-28T10:42:37Z | fubuloubu | feat: add telemetry hooks for liquidity
+- 2025-10-30T00:38:33Z | Recmo | fix: correct fees rounding / precision
+- 2025-10-31T14:34:29Z | Guillermo Rauch | feat: improve rewards pricing path
+- 2025-11-02T04:30:25Z | Tim Neutkens | fix: harden vault edge-case handling
+- 2025-11-03T18:26:22Z | awkweb | refactor: simplify staking module boundaries
+- 2025-11-05T08:22:18Z | jxom | perf: reduce restaking gas / latency
+- 2025-11-06T22:01:14Z | Dan Abramov | test: expand coverage for AMM
+- 2025-11-08T11:57:10Z | Hayden Adams | docs: clarify quoter integrator notes
+- 2025-11-10T01:53:06Z | transmissions11 | chore: bump router toolchain pins
+- 2025-11-11T15:49:02Z | Vectorized | security: tighten indexer validation
+- 2025-11-13T05:44:58Z | mds1 | feat: add telemetry hooks for API
+- 2025-11-14T19:40:55Z | gakonst | fix: correct SDK rounding / precision
+- 2025-11-16T09:36:51Z | Richard Moore | feat: improve auth pricing path
+- 2025-11-17T23:32:47Z | Kamil Mysliwiec | fix: harden Permit2 edge-case handling
+- 2025-11-19T13:28:43Z | Tim Suchanek | refactor: simplify TWAP module boundaries
+- 2025-11-21T03:24:39Z | Armani Ferrante | perf: reduce flash gas / latency
+- 2025-11-22T17:20:35Z | acheroncrypto | test: expand coverage for allocator
+- 2025-11-24T07:16:31Z | vitalik.eth | docs: clarify strategy integrator notes
+- 2025-11-25T21:12:28Z | pcaversaccio | chore: bump operator toolchain pins
+- 2025-11-27T11:08:24Z | banteg | security: tighten gauge validation
+- 2025-11-29T01:04:20Z | fubuloubu | feat: add telemetry hooks for bridge
+- 2025-11-30T15:00:16Z | Recmo | fix: correct nonce rounding / precision
+- 2025-12-02T04:55:12Z | Guillermo Rauch | feat: improve routing pricing path
+- 2025-12-03T18:34:08Z | Tim Neutkens | fix: harden settlement edge-case handling
+- 2025-12-05T08:30:05Z | awkweb | refactor: simplify oracle module boundaries
+- 2025-12-06T22:26:01Z | jxom | perf: reduce liquidity gas / latency
+- 2025-12-08T12:21:57Z | Dan Abramov | test: expand coverage for fees
+- 2025-12-10T02:17:53Z | Hayden Adams | docs: clarify rewards integrator notes
+- 2025-12-11T16:13:49Z | transmissions11 | chore: bump vault toolchain pins
+- 2025-12-13T06:09:45Z | Vectorized | security: tighten staking validation
+- 2025-12-14T20:05:41Z | mds1 | feat: add telemetry hooks for restaking
+- 2025-12-16T10:01:38Z | gakonst | fix: correct AMM rounding / precision
+- 2025-12-17T23:57:34Z | Richard Moore | feat: improve quoter pricing path
+- 2025-12-19T13:53:30Z | Kamil Mysliwiec | fix: harden router edge-case handling
+- 2025-12-21T03:49:26Z | Tim Suchanek | refactor: simplify indexer module boundaries
+- 2025-12-22T17:45:22Z | Armani Ferrante | perf: reduce API gas / latency
+- 2025-12-24T07:41:18Z | acheroncrypto | test: expand coverage for SDK
+- 2025-12-25T21:37:14Z | vitalik.eth | docs: clarify auth integrator notes
+- 2025-12-27T11:33:11Z | pcaversaccio | chore: bump Permit2 toolchain pins
+- 2025-12-29T01:29:07Z | banteg | security: tighten TWAP validation
+- 2025-12-30T15:08:03Z | fubuloubu | feat: add telemetry hooks for flash
+- 2026-01-01T05:03:59Z | Recmo | fix: correct allocator rounding / precision
+- 2026-01-02T18:59:55Z | Guillermo Rauch | feat: improve strategy pricing path
+- 2026-01-04T08:55:51Z | Tim Neutkens | fix: harden operator edge-case handling
+- 2026-01-05T22:51:47Z | awkweb | refactor: simplify gauge module boundaries
+- 2026-01-07T12:47:44Z | jxom | perf: reduce bridge gas / latency
+- 2026-01-09T02:43:40Z | Dan Abramov | test: expand coverage for nonce
+- 2026-01-10T16:39:36Z | Hayden Adams | docs: clarify routing integrator notes
+- 2026-01-12T06:35:32Z | transmissions11 | chore: bump settlement toolchain pins
+- 2026-01-13T20:31:28Z | Vectorized | security: tighten oracle validation
+- 2026-01-15T10:27:24Z | mds1 | feat: add telemetry hooks for liquidity
+- 2026-01-17T00:23:21Z | gakonst | fix: correct fees rounding / precision
+- 2026-01-18T14:19:17Z | Richard Moore | feat: improve rewards pricing path
+- 2026-01-20T04:15:13Z | Kamil Mysliwiec | fix: harden vault edge-case handling
+- 2026-01-21T18:11:09Z | Tim Suchanek | refactor: simplify staking module boundaries
+- 2026-01-23T08:07:05Z | Armani Ferrante | perf: reduce restaking gas / latency
+- 2026-01-24T22:03:01Z | acheroncrypto | test: expand coverage for AMM
+- 2026-01-26T11:41:57Z | vitalik.eth | docs: clarify quoter integrator notes
+- 2026-01-28T01:37:54Z | pcaversaccio | chore: bump router toolchain pins
+- 2026-01-29T15:33:50Z | banteg | security: tighten indexer validation
+- 2026-01-31T05:29:46Z | fubuloubu | feat: add telemetry hooks for API
+- 2026-02-01T19:25:42Z | Recmo | fix: correct SDK rounding / precision
+- 2026-02-03T09:21:38Z | Guillermo Rauch | feat: improve auth pricing path
+- 2026-02-04T23:17:34Z | Tim Neutkens | fix: harden Permit2 edge-case handling
+- 2026-02-06T13:13:30Z | awkweb | refactor: simplify TWAP module boundaries
+- 2026-02-08T03:09:27Z | jxom | perf: reduce flash gas / latency
+- 2026-02-09T17:05:23Z | Dan Abramov | test: expand coverage for allocator
+- 2026-02-11T07:01:19Z | Hayden Adams | docs: clarify strategy integrator notes
+- 2026-02-12T20:57:15Z | transmissions11 | chore: bump operator toolchain pins
+- 2026-02-14T10:53:11Z | Vectorized | security: tighten gauge validation
+- 2026-02-16T00:49:07Z | mds1 | feat: add telemetry hooks for bridge
+- 2026-02-17T14:45:03Z | gakonst | fix: correct nonce rounding / precision
+- 2026-02-19T04:41:00Z | Richard Moore | feat: improve routing pricing path
+- 2026-02-20T18:36:56Z | Kamil Mysliwiec | fix: harden settlement edge-case handling
+- 2026-02-22T08:15:52Z | Tim Suchanek | refactor: simplify oracle module boundaries
+- 2026-02-23T22:11:48Z | Armani Ferrante | perf: reduce liquidity gas / latency
+- 2026-02-25T12:07:44Z | acheroncrypto | test: expand coverage for fees
+- 2026-02-27T02:03:40Z | vitalik.eth | docs: clarify rewards integrator notes
+- 2026-02-28T15:59:36Z | pcaversaccio | chore: bump vault toolchain pins
+- 2026-03-02T05:55:33Z | banteg | security: tighten staking validation
+- 2026-03-03T19:51:29Z | fubuloubu | feat: add telemetry hooks for restaking
+- 2026-03-05T09:47:25Z | Recmo | fix: correct AMM rounding / precision
+- 2026-03-06T23:42:21Z | Guillermo Rauch | feat: improve quoter pricing path
+- 2026-03-08T13:38:17Z | Tim Neutkens | fix: harden router edge-case handling
+- 2026-03-10T03:34:13Z | awkweb | refactor: simplify indexer module boundaries
+- 2026-03-11T17:30:10Z | jxom | perf: reduce API gas / latency
+- 2026-03-13T07:26:06Z | Dan Abramov | test: expand coverage for SDK
+- 2026-03-14T21:22:02Z | Hayden Adams | docs: clarify auth integrator notes
+- 2026-03-16T11:17:58Z | transmissions11 | chore: bump Permit2 toolchain pins
+- 2026-03-18T01:13:54Z | Vectorized | security: tighten TWAP validation
+- 2026-03-19T15:09:50Z | mds1 | feat: add telemetry hooks for flash
+- 2026-03-21T04:48:46Z | gakonst | fix: correct allocator rounding / precision
+- 2026-03-22T18:44:43Z | Richard Moore | feat: improve strategy pricing path
+- 2026-03-24T08:40:39Z | Kamil Mysliwiec | fix: harden operator edge-case handling
+- 2026-03-25T22:36:35Z | Tim Suchanek | refactor: simplify gauge module boundaries
+- 2026-03-27T12:32:31Z | Armani Ferrante | perf: reduce bridge gas / latency
+- 2026-03-29T02:28:27Z | acheroncrypto | test: expand coverage for nonce
+- 2026-03-30T16:24:23Z | vitalik.eth | docs: clarify routing integrator notes
+- 2026-04-01T06:20:19Z | pcaversaccio | chore: bump settlement toolchain pins
+- 2026-04-02T20:16:16Z | banteg | security: tighten oracle validation
+- 2026-04-04T10:12:12Z | fubuloubu | feat: add telemetry hooks for liquidity
+- 2026-04-06T00:08:08Z | Recmo | fix: correct fees rounding / precision
+- 2026-04-07T14:04:04Z | Guillermo Rauch | feat: improve rewards pricing path
+- 2026-04-09T04:00:00Z | Tim Neutkens | fix: harden vault edge-case handling
+- 2026-04-10T17:55:56Z | awkweb | refactor: simplify staking module boundaries
+- 2026-04-12T07:51:52Z | jxom | perf: reduce restaking gas / latency
+- 2026-04-13T21:47:49Z | Dan Abramov | test: expand coverage for AMM
+- 2026-04-15T11:43:45Z | Hayden Adams | docs: clarify quoter integrator notes
+- 2026-04-17T01:22:41Z | transmissions11 | chore: bump router toolchain pins
+- 2026-04-18T15:18:37Z | Vectorized | security: tighten indexer validation
+- 2026-04-20T05:14:33Z | mds1 | feat: add telemetry hooks for API
+- 2026-04-21T19:10:29Z | gakonst | fix: correct SDK rounding / precision
+- 2026-04-23T09:06:26Z | Richard Moore | feat: improve auth pricing path
+- 2026-04-24T23:02:22Z | Kamil Mysliwiec | fix: harden Permit2 edge-case handling
+- 2026-04-26T12:58:18Z | Tim Suchanek | refactor: simplify TWAP module boundaries
+- 2026-04-28T02:54:14Z | Armani Ferrante | perf: reduce flash gas / latency
+- 2026-04-29T16:50:10Z | acheroncrypto | test: expand coverage for allocator
+- 2026-05-01T06:46:06Z | vitalik.eth | docs: clarify strategy integrator notes
+- 2026-05-02T20:42:02Z | pcaversaccio | chore: bump operator toolchain pins
+- 2026-05-04T10:37:59Z | banteg | security: tighten gauge validation
+- 2026-05-06T00:33:55Z | fubuloubu | feat: add telemetry hooks for bridge
+- 2026-05-07T14:29:51Z | Recmo | fix: correct nonce rounding / precision
+- 2026-05-09T04:25:47Z | Guillermo Rauch | feat: improve routing pricing path
+- 2026-05-10T18:21:43Z | Tim Neutkens | fix: harden settlement edge-case handling
+- 2026-05-12T08:17:39Z | awkweb | refactor: simplify oracle module boundaries
+- 2026-05-13T21:56:35Z | jxom | perf: reduce liquidity gas / latency
+- 2026-05-15T11:52:32Z | Dan Abramov | test: expand coverage for fees
+- 2026-05-17T01:48:28Z | Hayden Adams | docs: clarify rewards integrator notes
+- 2026-05-18T15:44:24Z | transmissions11 | chore: bump vault toolchain pins
+- 2026-05-20T05:40:20Z | Vectorized | security: tighten staking validation
+- 2026-05-21T19:36:16Z | mds1 | feat: add telemetry hooks for restaking
+- 2026-05-23T09:32:12Z | gakonst | fix: correct AMM rounding / precision
+- 2026-05-24T23:28:08Z | Richard Moore | feat: improve quoter pricing path
+- 2026-05-26T13:24:05Z | Kamil Mysliwiec | fix: harden router edge-case handling
+- 2026-05-28T03:20:01Z | Tim Suchanek | refactor: simplify indexer module boundaries
+- 2026-05-29T17:15:57Z | Armani Ferrante | perf: reduce API gas / latency
+- 2026-05-31T07:11:53Z | acheroncrypto | test: expand coverage for SDK
+- 2026-06-01T21:07:49Z | vitalik.eth | docs: clarify auth integrator notes
+- 2026-06-03T11:03:45Z | pcaversaccio | chore: bump Permit2 toolchain pins
+- 2026-06-05T00:59:41Z | banteg | security: tighten TWAP validation
+- 2026-06-06T14:55:38Z | fubuloubu | feat: add telemetry hooks for flash
+- 2026-06-08T04:51:34Z | Recmo | fix: correct allocator rounding / precision
+- 2026-06-09T18:29:30Z | Guillermo Rauch | feat: improve strategy pricing path
+- 2026-06-11T08:25:26Z | Tim Neutkens | fix: harden operator edge-case handling
+- 2026-06-12T22:21:22Z | awkweb | refactor: simplify gauge module boundaries
+- 2026-06-14T12:17:18Z | jxom | perf: reduce bridge gas / latency
+- 2026-06-16T02:13:15Z | Dan Abramov | test: expand coverage for nonce
+- 2026-06-17T16:09:11Z | Hayden Adams | docs: clarify routing integrator notes
+- 2026-06-19T06:05:07Z | transmissions11 | chore: bump settlement toolchain pins
+- 2026-06-20T20:01:03Z | Vectorized | security: tighten oracle validation
+- 2026-06-22T09:56:59Z | mds1 | feat: add telemetry hooks for liquidity
+- 2026-06-23T23:52:55Z | gakonst | fix: correct fees rounding / precision
+- 2026-06-25T13:48:51Z | Richard Moore | feat: improve rewards pricing path
+- 2026-06-27T03:44:48Z | Kamil Mysliwiec | fix: harden vault edge-case handling
+- 2026-06-28T17:40:44Z | Tim Suchanek | refactor: simplify staking module boundaries
+- 2026-06-30T07:36:40Z | Armani Ferrante | perf: reduce restaking gas / latency
+- 2026-07-01T21:32:36Z | acheroncrypto | test: expand coverage for AMM
+- 2026-07-03T11:28:32Z | vitalik.eth | docs: clarify quoter integrator notes
+- 2026-07-05T01:24:28Z | pcaversaccio | chore: bump router toolchain pins
+- 2026-07-06T15:03:24Z | banteg | security: tighten indexer validation
+- 2026-07-08T04:59:21Z | fubuloubu | feat: add telemetry hooks for API
+- 2026-07-09T18:55:17Z | Recmo | fix: correct SDK rounding / precision
+- 2026-07-11T08:51:13Z | Guillermo Rauch | feat: improve auth pricing path
+- 2026-07-12T22:47:09Z | Tim Neutkens | fix: harden Permit2 edge-case handling
+- 2026-07-14T12:43:05Z | awkweb | refactor: simplify TWAP module boundaries
+- 2026-07-16T02:39:01Z | jxom | perf: reduce flash gas / latency
+- 2026-07-17T16:34:57Z | Dan Abramov | test: expand coverage for allocator
+- 2026-07-19T06:30:54Z | Hayden Adams | docs: clarify strategy integrator notes
+- 2026-07-20T20:26:50Z | transmissions11 | chore: bump operator toolchain pins
+- 2026-07-22T10:22:46Z | Vectorized | security: tighten gauge validation
+- 2026-07-24T00:18:42Z | mds1 | feat: add telemetry hooks for bridge
+- 2026-07-25T14:14:38Z | gakonst | fix: correct nonce rounding / precision
+- 2026-07-27T04:10:34Z | Richard Moore | feat: improve routing pricing path
